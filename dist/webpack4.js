@@ -81,12 +81,11 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./src/index.js":
+/******/ ([
+/* 0 */
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -96,7 +95,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResult", function() { return getResult; });
-/* harmony import */ var _mylib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mylib.js */ "./src/mylib.js");
+/* harmony import */ var _mylib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mylib.js */ 1);
 
 
 function getResult(...args) {
@@ -105,8 +104,7 @@ function getResult(...args) {
 
 
 /***/ }),
-
-/***/ "./src/mylib.js":
+/* 1 */
 /*!**********************!*\
   !*** ./src/mylib.js ***!
   \**********************/
@@ -119,5 +117,4 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ })
-
-/******/ });
+/******/ ]);
