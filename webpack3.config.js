@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 
 module.exports = {
   entry: './src',
@@ -5,5 +6,8 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     filename: 'webpack3.js'
-  }
+  },
+  plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ]
 }

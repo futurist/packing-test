@@ -69,21 +69,17 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+// CONCATENATED MODULE: ./src/mylib.js
+/* harmony default export */ var mylib = (42);
+
+// CONCATENATED MODULE: ./src/index.js
 /* harmony export (immutable) */ __webpack_exports__["getResult"] = getResult;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mylib_js__ = __webpack_require__(1);
 
 
 function getResult(...args) {
-   console.log(__WEBPACK_IMPORTED_MODULE_0__mylib_js__["a" /* default */], args);
+   console.log(mylib, args);
 }
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = (42);
 
 
 /***/ })

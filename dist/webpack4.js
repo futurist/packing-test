@@ -87,35 +87,24 @@
 /******/ ({
 
 /***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/*!**********************************!*\
+  !*** ./src/index.js + 1 modules ***!
+  \**********************************/
 /*! exports provided: getResult */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./src/mylib.js
+/* harmony default export */ var mylib = (42);
+
+// CONCATENATED MODULE: ./src/index.js
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResult", function() { return getResult; });
-/* harmony import */ var _mylib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mylib.js */ "./src/mylib.js");
 
 
 function getResult(...args) {
-   console.log(_mylib_js__WEBPACK_IMPORTED_MODULE_0__["default"], args);
+   console.log(mylib, args);
 }
-
-
-/***/ }),
-
-/***/ "./src/mylib.js":
-/*!**********************!*\
-  !*** ./src/mylib.js ***!
-  \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (42);
 
 
 /***/ })
