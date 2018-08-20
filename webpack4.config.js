@@ -6,6 +6,10 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     filename: 'webpack4.js'
+  },
+  optimization: {
+    //providedExports: true,  // <- default
+    usedExports: true  // production ? true : false
   }
 }
 

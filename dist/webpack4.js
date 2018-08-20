@@ -91,6 +91,7 @@
   !*** ./src/index.js ***!
   \**********************/
 /*! exports provided: getResult */
+/*! all exports used */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function getResult(...args) {
-   console.log(_mylib_js__WEBPACK_IMPORTED_MODULE_0__["default"], args);
+   console.log(_mylib_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"], args);
 }
 
 
@@ -111,11 +112,11 @@ function getResult(...args) {
   !*** ./src/mylib.js ***!
   \**********************/
 /*! exports provided: default */
+/*! exports used: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (42);
+/* harmony default export */ __webpack_exports__["a"] = (42);
 
 
 /***/ })
