@@ -1,5 +1,5 @@
-import value from './mylib.js';
+import {a,b} from 'big-module';
 
 export function getResult(...args) {
-   console.log(value, args);
+    console.log(a,b)
 }
