@@ -90,7 +90,6 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: getResult */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -110,7 +109,6 @@ function getResult(...args) {
 /*!**********************!*\
   !*** ./src/mylib.js ***!
   \**********************/
-/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
