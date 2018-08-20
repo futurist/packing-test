@@ -1,0 +1,16 @@
+{
+  "name": "simple-packing",
+  "version": "1.0.0",
+  "scripts": {
+    "build:rollup": "rollup -c",
+    "build:webpack3": "webpack --config=webpack3.config.js",
+    "build:webpack4": "webpack-cli --config=webpack4.config.js || echo '\nEnsure `npm install -g webpack-cli` first!!!\n'",
+    "build": "npm run build:rollup && npm run build:webpack3 && npm run build:webpack4"
+  },
+  "dependencies": {
+    "rollup": "^0.64.1",
+    "webpack": "^3.12.0"
+  },
+  "license": "MIT",
+  "private": true
+}
