@@ -71,19 +71,20 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["getResult"] = getResult;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mylib_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__mylib_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__mylib_js__);
 
 
 function getResult(...args) {
-   console.log(__WEBPACK_IMPORTED_MODULE_0__mylib_js__["a" /* default */], args);
+   console.log(__WEBPACK_IMPORTED_MODULE_0__mylib_js___default.a, args);
 }
+getResult()
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = (42);
+module.exports = 42;
 
 
 /***/ })

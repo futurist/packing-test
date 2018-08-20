@@ -97,11 +97,13 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResult", function() { return getResult; });
 /* harmony import */ var _mylib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mylib.js */ "./src/mylib.js");
+/* harmony import */ var _mylib_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_mylib_js__WEBPACK_IMPORTED_MODULE_0__);
 
 
 function getResult(...args) {
-   console.log(_mylib_js__WEBPACK_IMPORTED_MODULE_0__["default"], args);
+   console.log(_mylib_js__WEBPACK_IMPORTED_MODULE_0___default.a, args);
 }
+getResult()
 
 
 /***/ }),
@@ -110,12 +112,10 @@ function getResult(...args) {
 /*!**********************!*\
   !*** ./src/mylib.js ***!
   \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (42);
+module.exports = 42;
 
 
 /***/ })

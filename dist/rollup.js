@@ -1,11 +1,12 @@
 var myLib = (function (exports) {
    'use strict';
 
-   var value = 42;
+   var mylib = 42;
 
    function getResult(...args) {
-      console.log(value, args);
+      console.log(mylib, args);
    }
+   getResult();
 
    exports.getResult = getResult;
 
