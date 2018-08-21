@@ -6,6 +6,19 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     filename: 'webpack4.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: {
+          loader: './my-loader',
+          query: {
+            before: '// Copyright here \n'
+          }
+        }
+      }
+    ]
   }
 }
 
