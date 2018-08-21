@@ -14,7 +14,9 @@ module.exports = {
         use: {
           loader: './my-loader',
           query: {
-            before: '// Copyright here \n'
+            fn: function(source){
+              return `console.log('now run: ${this.resource}');\n` + source
+            }
           }
         }
       }

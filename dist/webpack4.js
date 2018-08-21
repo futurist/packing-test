@@ -97,7 +97,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResult", function() { return getResult; });
 /* harmony import */ var _mylib_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mylib.js */ "./src/mylib.js");
-// Copyright here 
+console.log('now run: /Users/jamesyang/james/simple-packing/src/index.js');
 
 
 function getResult(...args) {
@@ -116,7 +116,7 @@ function getResult(...args) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-// Copyright here 
+console.log('now run: /Users/jamesyang/james/simple-packing/src/mylib.js');
 /* harmony default export */ __webpack_exports__["default"] = (42);
 
 
