@@ -1,5 +1,5 @@
 {
-  "mode": "development",
+  "mode": "production",
   "devtool": false,
   "entry": "./src",
   "output": {
@@ -14,7 +14,7 @@
     "globalObject": "window",
     "devtoolNamespace": "",
     "libraryTarget": "var",
-    "pathinfo": true,
+    "pathinfo": false,
     "sourceMapFilename": "[file].map[query]",
     "hotUpdateChunkFilename": "[id].[hash].hot-update.js",
     "hotUpdateMainFilename": "[hash].hot-update.json",
@@ -35,7 +35,7 @@
     }
   ],
   "context": "/Users/jamesyang/james/simple-packing",
-  "cache": true,
+  "cache": false,
   "target": "web",
   "module": {
     "unknownContextRequest": ".",
@@ -51,7 +51,7 @@
     "wrappedContextCritical": false,
     "strictExportPresence": false,
     "strictThisContextOnImports": false,
-    "unsafeCache": true,
+    "unsafeCache": false,
     "rules": [],
     "defaultRules": [
       {
@@ -87,25 +87,29 @@
     "__filename": "mock",
     "__dirname": "mock"
   },
-  "performance": false,
+  "performance": {
+    "maxAssetSize": 250000,
+    "maxEntrypointSize": 250000,
+    "hints": "warning"
+  },
   "optimization": {
     "removeAvailableModules": true,
     "removeEmptyChunks": true,
     "mergeDuplicateChunks": true,
-    "flagIncludedChunks": false,
-    "occurrenceOrder": false,
-    "sideEffects": false,
+    "flagIncludedChunks": true,
+    "occurrenceOrder": true,
+    "sideEffects": true,
     "providedExports": true,
-    "usedExports": false,
-    "concatenateModules": false,
+    "usedExports": true,
+    "concatenateModules": true,
     "splitChunks": {
-      "hidePathInfo": false,
+      "hidePathInfo": true,
       "chunks": "async",
-      "minSize": 10000,
+      "minSize": 30000,
       "minChunks": 1,
-      "maxAsyncRequests": null,
+      "maxAsyncRequests": 5,
       "automaticNameDelimiter": "~",
-      "maxInitialRequests": null,
+      "maxInitialRequests": 3,
       "name": true,
       "cacheGroups": {
         "default": {
@@ -121,18 +125,18 @@
         }
       }
     },
-    "noEmitOnErrors": false,
-    "checkWasmTypes": false,
+    "noEmitOnErrors": true,
+    "checkWasmTypes": true,
     "mangleWasmImports": false,
-    "namedModules": true,
+    "namedModules": false,
     "hashedModuleIds": false,
-    "namedChunks": true,
+    "namedChunks": false,
     "portableRecords": false,
-    "minimize": false,
+    "minimize": true,
     "minimizer": [
       {}
     ],
-    "nodeEnv": "development"
+    "nodeEnv": "production"
   },
   "resolve": {
     "unsafeCache": true,

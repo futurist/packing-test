@@ -1,13 +1,22 @@
-class MyPlugin {
+class BannerPlugin {
   constructor(options){
     this.options = options||{}
   }
   apply(compiler) {
-    require('fs').writeFileSync(
-      this.options.filename,
-      JSON.stringify(compiler.options, null, 2),
-      'utf8'
-    )
+    const {ConcatSource} = require("webpack-sources")
+
+    const handler = (compilation) => {
+      const {assets} = compilation
+      Object.keys(assets).forEach(name => {
+        assets[name] = new ConcatSource(this.options.before, assets[name], this.options.after)
+      })
+    }
+
+    if (compiler.hooks) {
+      compiler.hooks.emit.tap('my-plugin', handler)
+    } else {
+      compiler.plugin('emit', handler)
+    }
   }
 }
 
@@ -20,8 +29,9 @@ module.exports = {
     filename: 'webpack4.js'
   },
   plugins:[
-    new MyPlugin({
-      filename: 'dist/dev.json'
+    new BannerPlugin({
+      before: '// Copyright here\n',
+      after: '\nconsole.log(1234)'
     })
   ]
 }

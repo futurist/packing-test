@@ -1,3 +1,4 @@
+// Copyright here
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -121,3 +122,4 @@ __webpack_require__.r(__webpack_exports__);
 /***/ })
 
 /******/ });
+console.log(1234)
