@@ -1,10 +1,11 @@
 
-export function getResult(...args) {
-    import('./mylib_esm.js').then(m=>{
-        console.log('mylib_esm', m)
-    })
-    import('./mylib_cjs.js').then(m=>{
-        console.log('mylib_cjs', m)
+export function getResult(name, ...args) {
+    import(
+        /* webpackChunkName: "[request]" */
+        /* webpackPreload: true */
+        /* webpackPrefetch: true */
+        `./mylib_${name}`).then(m=>{
+        console.log(name, m)
     })
 }
-getResult()
+getResult('cjs')

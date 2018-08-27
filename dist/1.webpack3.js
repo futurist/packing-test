@@ -1,11 +1,9 @@
-webpackJsonp([1],{
-
-/***/ 2:
+webpackJsonp([1],[
+/* 0 */
 /***/ (function(module, exports) {
 
 module.exports = 42;
 
 
 /***/ })
-
-});
+]);

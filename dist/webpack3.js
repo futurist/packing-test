@@ -142,27 +142,62 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (immutable) */ __webpack_exports__["getResult"] = getResult;
 
-function getResult(...args) {
-    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 1)).then(m=>{
-        console.log('mylib_esm', m)
-    })
-    __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 2)).then(m=>{
-        console.log('mylib_cjs', m)
+function getResult(name, ...args) {
+    __webpack_require__(3)(`./mylib_${name}`).then(m=>{
+        console.log(name, m)
     })
 }
-getResult()
+getResult('cjs')
 
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./mylib_cjs": [
+		0,
+		1
+	],
+	"./mylib_cjs.js": [
+		0,
+		1
+	],
+	"./mylib_esm": [
+		1,
+		0
+	],
+	"./mylib_esm.js": [
+		1,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 3;
+module.exports = webpackAsyncContext;
 
 /***/ })
 /******/ ]);

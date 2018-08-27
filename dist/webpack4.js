@@ -4,7 +4,7 @@
 /******/ 		var chunkIds = data[0];
 /******/ 		var moreModules = data[1];
 /******/
-/******/
+/******/ 		var prefetchChunks = data[3] || [];
 /******/ 		// add "moreModules" to the modules object,
 /******/ 		// then flag all "chunkIds" as loaded and fire callback
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
@@ -21,7 +21,22 @@
 /******/ 			}
 /******/ 		}
 /******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/ 		// chunk prefetching for javascript
+/******/ 		var head = document.getElementsByTagName('head')[0];
+/******/ 		prefetchChunks.forEach(function(chunkId) {
+/******/ 			if(installedChunks[chunkId] === undefined) {
+/******/ 				installedChunks[chunkId] = null;
+/******/ 				var link = document.createElement('link');
 /******/
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					link.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				link.rel = "prefetch";
+/******/ 				link.as = "script";
+/******/ 				link.href = jsonpScriptSrc(chunkId);
+/******/ 				head.appendChild(link);
+/******/ 			}
+/******/ 		});
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
@@ -193,11 +208,63 @@
 /******/ 	var parentJsonpFunction = oldJsonpFunction;
 /******/
 /******/
+/******/ 	webpackJsonpCallback([[], {}, 0, ["mylib_cjs","mylib_esm"]]);
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./src lazy recursive ^\\.\\/mylib_.*$":
+/*!*******************************************************************!*\
+  !*** ./src lazy ^\.\/mylib_.*$ prefetchOrder: 0 namespace object ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./mylib_cjs": [
+		"./src/mylib_cjs.js",
+		7,
+		"mylib_cjs"
+	],
+	"./mylib_cjs.js": [
+		"./src/mylib_cjs.js",
+		7,
+		"mylib_cjs"
+	],
+	"./mylib_esm": [
+		"./src/mylib_esm.js",
+		9,
+		"mylib_esm"
+	],
+	"./mylib_esm.js": [
+		"./src/mylib_esm.js",
+		9,
+		"mylib_esm"
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids) {
+		return Promise.resolve().then(function() {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+	return __webpack_require__.e(ids[2]).then(function() {
+		var id = ids[0];
+		return __webpack_require__.t(id, ids[1])
+	});
+}
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./src lazy recursive ^\\.\\/mylib_.*$";
+module.exports = webpackAsyncContext;
+
+/***/ }),
 
 /***/ "./src/index.js":
 /*!**********************!*\
@@ -210,15 +277,12 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getResult", function() { return getResult; });
 
-function getResult(...args) {
-    __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./mylib_esm.js */ "./src/mylib_esm.js")).then(m=>{
-        console.log('mylib_esm', m)
-    })
-    __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.t.bind(null, /*! ./mylib_cjs.js */ "./src/mylib_cjs.js", 7)).then(m=>{
-        console.log('mylib_cjs', m)
+function getResult(name, ...args) {
+    __webpack_require__("./src lazy recursive ^\\.\\/mylib_.*$")(`./mylib_${name}`).then(m=>{
+        console.log(name, m)
     })
 }
-getResult()
+getResult('cjs')
 
 
 /***/ })
