@@ -5,7 +5,8 @@ module.exports = {
   entry: './src',
   output: {
     path: `${__dirname}/dist`,
-    filename: 'webpack4.js'
+    filename: 'webpack4.js',
+    library: 'MyLibrary'
   }
 }
 

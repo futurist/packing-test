@@ -4,6 +4,7 @@ module.exports = {
   devtool: false,
   output: {
     path: `${__dirname}/dist`,
-    filename: 'webpack3.js'
+    filename: 'webpack3.js',
+    library: 'MyLibrary'
   }
 }

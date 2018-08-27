@@ -1,4 +1,4 @@
-var myLib = (function (exports) {
+var MyLibrary = (function (exports) {
    'use strict';
 
    var value = 42;
